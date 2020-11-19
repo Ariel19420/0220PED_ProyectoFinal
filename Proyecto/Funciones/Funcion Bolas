@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <queue>
+#include<iostream>
+#include<string>
+using namespace std;
+
+struct Bolas{
+    string Color;
+    string talla;
+};
+typedef struct Bolas bolas;
+
+
+void pedirbolas();
+void vercola();
+queue <bolas> coladebolas;
+bolas unabola;
+
+void MenuBolas(){
+    
+    /*bool regresar=true;*/
+    bool continuar=true;
+    do{
+    int opc=0 ;
+    cout<< "Ingrese una opcion..."<<endl;
+    cout<< "1-) Pedir bolas(cantidad maxima por persona 2)."<<endl;
+    cout<< "2-) Ver pedido."<<endl;
+    cout<< "3-) Regresar al menu principal."<<endl;
+    cin>>opc;cin.ignore();
+    
+    switch(opc){
+    case 1: pedirbolas(); break;
+    case 2: vercola(); break;
+    case 3: /*return regresar = false*/ ; break;
+    default: cout<<"Ingrese una opcion valida..."<<endl;
+    
+        
+    }
+    
+    }while(continuar);
+    
+}
+
+int main()
+{
+    
+    
+    MenuBolas();
+
+    return 0;
+}
+
+void pedirbolas(){
+    
+    cout<<"Ingrese la talla de la bola. "<<endl; 
+    cout<<"(S, M, L, XL)"<<endl; getline(cin, unabola.talla);
+    cout<<"Ingrese el color de la bola. "<<endl;
+    cout<<"(Verde, Azul o Naranja)"<<endl; getline(cin, unabola.Color);
+    coladebolas.push(unabola);
+    
+}
+void vercola(){
+    cout<<"Cantidad de bolas actualmente: "<<endl;
+    cout<< coladebolas.size()<<endl;
+    cout<<"Color: "<<" \tTalla:"<<endl;
+    cout<<unabola.Color<< ".\t\t  "<< unabola.talla<<"."<<endl;
+}
