@@ -8,7 +8,7 @@ struct jugador {
     double talla;
 };
 
-void menuListaJugadores (vector<jugador> Jugadores){
+void menuListaJugadores (vector<jugador> &Jugadores){
         int select1; jugador Player; int eliminacion=0; int cont_a=0; int cont_n=0; ;int terminar=0; int max_jugadores=0;
         jugador Player2; float total_a; float total_n;
         vector <jugador> Copia;
