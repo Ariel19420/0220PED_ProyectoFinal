@@ -1,0 +1,139 @@
+#include <stdio.h>
+#include <queue>
+#include<iostream>
+#include<string>
+using namespace std;
+
+struct Bolas{
+    string Color="";
+    string talla="";
+    
+    friend ostream& operator<<(ostream& os, const Bolas& b){
+    os<< (b.Color +","+ b.talla);
+    return os;
+    }
+};
+typedef struct Bolas bolas;
+
+void borrarcola();
+void MenuBolas(int b);
+void usarbola(int a);
+void pedirbolas(int a);
+void vercola();
+
+queue <bolas> coladebolas;
+bolas unabola;
+
+
+
+
+
+int main()
+{   int x=0;
+    cout<<"Numero de jugadores:"<<endl;
+    cin>>x;cin.ignore();
+    
+    MenuBolas(x);
+    
+    return 0;
+}
+
+void MenuBolas(int b){
+    
+    bool regresar=true;
+    bool continuar=true;
+    do{
+    int opc=0 ;
+    cout << "Ingrese una opcion..." << endl;
+    cout << "1-) Pedir bolas(cantidad maxima por persona 2)." << endl;
+    cout << "2-) Ver pedido." << endl;
+    cout << "3-) Borrar pedido." << endl;
+    cout << "4-) Regresar al menu principal." << endl;
+    
+    cin >> opc;cin.ignore();
+    
+    switch(opc){
+    case 1: pedirbolas(b); break;
+    case 2: vercola(); break;
+    case 3: borrarcola(); break;
+    case 4: return regresar = false ; break;
+    default: cout << "Ingrese una opcion valida..." << endl;
+    
+        
+    }
+    
+    }while(continuar);
+    
+}
+
+void pedirbolas(int a){
+
+    bool xd=true, xD=true;
+    if (coladebolas.size()<a*2){
+    for (int i=0; i<a; i++){
+    cout << "Jugador "<< i+1 << " escogera su par de bolas de boliche."<<endl;
+    do{
+    cout << "Ingrese la talla de la bola. " << endl; 
+    cout << "(XS, S, M, L, XL)" << endl; getline(cin,unabola.talla);
+    cout<< unabola.talla<<endl;
+    if (unabola.talla ==   "XS" || unabola.talla == "S" || unabola.talla == "M" || unabola.talla == "L"|| unabola.talla == "XL" ){ 
+        
+        xd=false;
+    }else{ cout<<"Dato de talla incorrecto... Ingrese nuevamente."<<endl;
+         }
+        
+    }while (xd);
+    int opc2=0;
+    do{
+    cout<<"Ingrese el color de la bola. "<<endl;
+    cout << "\n1.Verde\n2.Azul \n3.Naranja \n4.Salir" << endl;
+    cin>>opc2; cin.ignore();
+    
+    switch (opc2){
+        case 1: unabola.Color= "Verde";xD=false; break;
+        case 2: unabola.Color= "Azul";xD=false; break;
+        case 3: unabola.Color= "Naranja";xD=false; break;
+        default: cout<<"Opcion incorrecta... Ingrese la opcion de nuevo."<<endl;
+    }
+    }while(xD);
+        coladebolas.push(unabola);}
+    }else{
+        cout<<"Ha superado la cantidad maxima de bolas!"<<endl;
+        }
+    
+    
+}
+void vercola(){
+    cout << "Cantidad de bolas actualmente: " << endl;
+    cout << coladebolas.size() << endl;
+    cout << "Color: "<<" \tTalla:" << endl;
+    cout << unabola.Color<< ".\t\t  " << unabola.talla << "." << endl;
+}
+void usarbolas(int a){
+    
+    bolas bolasusada= coladebolas.front();
+    
+    for (int i=0; i<a; i++){
+        cout << "Usted esta utilizando la bola: " << bolasusada;
+        cout << "Talla: "<< bolasusada.talla << endl;
+        cout << "Color: "<< bolasusada.Color << endl;
+        string color2=bolasusada.Color, talla2=bolasusada.talla;
+        bolas aux;
+        aux.Color=color2, aux.talla=talla2;
+        coladebolas.pop();
+        coladebolas.push(aux);
+    }
+    
+}
+void borrarcola(){
+    
+    if (coladebolas.empty()){
+        cout<<"No hay datos que borrar."<<endl;
+    }else{
+        cout<<"Borrando datos..."<<endl;
+        while(!coladebolas.empty()){
+        
+        coladebolas.pop();
+        }
+    }
+}
