@@ -85,7 +85,9 @@ do{
         condicion = false;
         continuarJuego = subMenuFinal();
         }
-        
+        else{
+            cout << "\nError numero de rondas no valido volviendo al menu de juego"<<endl;
+        }
         break;
     
     case 2:
