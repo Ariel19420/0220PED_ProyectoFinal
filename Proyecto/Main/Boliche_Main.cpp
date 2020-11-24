@@ -16,6 +16,7 @@ int main (){
     vector <ijugador> listaJugadores;
     queue <bolas> colaBolasEnJuego;
     do{
+    cout << "\n***** BIENVENIDO A LA BOLERA *****" << endl;
     cout << "\nElija una opcion: " << endl;
     cout << "1. Ingresar a los jugadores." << endl;
     cout << "2. Ingresar las bolas de boliche que desee." << endl;
