@@ -24,7 +24,7 @@ bool MenuBolas(int b, queue <bolas> &coladebolas){
     do{
     int opc=0 ;
     cout << "\n********** MENU **********" << endl;
-    cout << "1. Pedir bolas(cantidad maxima por persona: 2)." << endl;
+    cout << "1. Pedir bolas." << endl;
     cout << "2. Ver cola." << endl;
     cout << "3. Borrar cola." << endl;
     cout << "4. Procesar la cola." << endl;
