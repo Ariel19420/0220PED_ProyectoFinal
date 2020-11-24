@@ -37,6 +37,7 @@ bool MenuBolas(int b, queue <bolas> &coladebolas){
     case 3: borrarcola(coladebolas); break;
     case 4: if (!coladebolas.empty())
     {
+        cout << "\nCola procesada con exito."<<endl;
         continuar = false;
         return true;
     }
