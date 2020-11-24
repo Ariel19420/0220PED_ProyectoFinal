@@ -71,14 +71,14 @@ void pedirbolas(int a, queue <bolas> &coladebolas){
                 unabola.talla=talla;
                 int opc2=0;
                 cout<<"\nIngrese el color de la bola. "<<endl;
-                cout << "\n1.Verde\n2.Azul \n3.Naranja" << endl;
+                cout << "\n1.Verde\n2.Azul \n3.Rosa" << endl;
                 cout << ">";
                 cin>>opc2; cin.ignore();
     
                 switch (opc2){
                     case 1: unabola.Color= "Verde";condicion++; break;
                     case 2: unabola.Color= "Azul";condicion++; break;
-                    case 3: unabola.Color= "Naranja";condicion++; break;
+                    case 3: unabola.Color= "Rosa";condicion++; break;
                     default: cout<<"\nOpcion incorrecta... Ingrese la opcion de nuevo."<<endl;
                 }
                 }
@@ -103,7 +103,7 @@ void vercola(queue <bolas> &coladebolas){
     for (int i = 0; i < coladebolas.size(); i++)
     {   
         unabola = copiaCola.front();
-        cout << "\n***** Bola " << i+1 <<"*****" << endl;
+        cout << "\n***** Bola " << i+1 <<" *****" << endl;
         cout << "Color: "<<" \tTalla:" << endl;
         cout << unabola.Color<< ".\t\t  " << unabola.talla << "." << endl;
         copiaCola.pop();
