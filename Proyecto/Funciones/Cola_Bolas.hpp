@@ -101,6 +101,7 @@ void vercola(queue <bolas> &coladebolas){
     queue <bolas> copiaCola;
     bolas unabola;
     copiaCola = coladebolas;
+    if (!copiaCola.empty()){
     for (int i = 0; i < coladebolas.size(); i++)
     {   
         unabola = copiaCola.front();
@@ -109,6 +110,10 @@ void vercola(queue <bolas> &coladebolas){
         cout << unabola.Color<< ".\t\t  " << unabola.talla << "." << endl;
         copiaCola.pop();
     }
+    }
+    else{
+        cout<<"\nNo se encontro nada para mostrar"<<endl;
+    }   
 }
 
 void borrarcola(queue <bolas> &coladebolas){
