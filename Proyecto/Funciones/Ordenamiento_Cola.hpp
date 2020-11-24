@@ -47,7 +47,7 @@ void ordenamiento (queue<jugadorPuntuacion>Jugadores_c){
     {
         Jugador2=final.front();
         cout<<"\nNombre del jugador " << i+1 << ": "<< Jugador2.Apodo<< ". Edad del jugador es de: "
-        <<Jugador2.edad<< ". Talla de zapatos es de: "<<Jugador2.puntuacion <<endl;
+        <<Jugador2.edad<< "." <<endl;
         final.pop();
     }
 }
