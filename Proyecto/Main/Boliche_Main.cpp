@@ -17,7 +17,7 @@ int main (){
     queue <bolas> colaBolasEnJuego;
     do{
     cout << "\n***** BIENVENIDO A LA BOLERA *****" << endl;
-    cout << "\nElija una opcion: " << endl;
+    cout << "Elija una opcion: " << endl;
     cout << "1. Ingresar a los jugadores." << endl;
     cout << "2. Ingresar las bolas de boliche que desee." << endl;
     cout << "3. Procesar juego (Debera haber llenado los campos anteriores)." << endl;
